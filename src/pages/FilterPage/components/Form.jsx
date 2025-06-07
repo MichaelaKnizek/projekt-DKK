@@ -1,22 +1,15 @@
 import React from 'react';
 import { tripFilter } from '../../../../data/trip-options';
 import { useSearchParams } from 'react-router';
+import { NavLink } from 'react-router';
+import { parseSearchParams } from '../../../utils';
 import './Form.css';
 
 const Form = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   // console.log(searchParams);
 
-  const parseSearchParams = () => {
-    const values = {};
-    searchParams.forEach((value, key) => {
-      values[key] = value.includes(',') ? value.split(',') : value;
-    });
-    console.log(values);
-    return values;
-  };
-
-  const formValues = parseSearchParams();
+  const formValues = parseSearchParams(searchParams);
 
   const updateSimpleParams = (key, value) => {
     let params = new URLSearchParams(searchParams);
@@ -140,6 +133,7 @@ const Form = () => {
           </label>
         ))}
       </div>
+      <NavLink to={`/result?${searchParams.toString()}`}>Vybrat</NavLink>
     </form>
   );
 };
