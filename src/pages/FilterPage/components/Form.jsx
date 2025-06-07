@@ -6,17 +6,17 @@ import './Form.css';
 const Form = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   // console.log(searchParams);
-  const parseArray = (section) => {
-    const current = searchParams.get(section);
-    const parsedArray = current === null ? [] : current.split(',');
-    return parsedArray;
+
+  const parseSearchParams = () => {
+    const values = {};
+    searchParams.forEach((value, key) => {
+      values[key] = value.includes(',') ? value.split(',') : value;
+    });
+    console.log(values);
+    return values;
   };
-  const location = searchParams.get('location');
-  const difficulty = searchParams.get('difficulty');
-  const length = searchParams.get('length');
-  const terrain = parseArray('terrain');
-  const features = parseArray('features');
-  const suitableFor = parseArray('suitableFor');
+
+  const formValues = parseSearchParams();
 
   const updateSimpleParams = (key, value) => {
     let params = new URLSearchParams(searchParams);
@@ -42,7 +42,7 @@ const Form = () => {
   };
   const handleCheckboxChange = (section, item) => {
     console.log(section, item);
-    const selectedItems = parseArray(section);
+    const selectedItems = formValues[section];
     const updatedSelectedItems = selectedItems.includes(item)
       ? selectedItems.filter((current) => current !== item)
       : [...selectedItems, item];
@@ -54,11 +54,13 @@ const Form = () => {
         <label htmlFor="location">Lokalita</label>
         <select
           name="location"
-          value={location}
+          value={formValues.location}
           onChange={(e) => handleChange(e)}
         >
           {tripFilter.locations.map((item) => (
-            <option value={item}>{item}</option>
+            <option key={item} value={item}>
+              {item}
+            </option>
           ))}
         </select>
       </div>
@@ -66,19 +68,27 @@ const Form = () => {
         <label htmlFor="difficulty">Obtížnost</label>
         <select
           name="difficulty"
-          value={difficulty}
+          value={formValues.difficulty}
           onChange={(e) => handleChange(e)}
         >
           {tripFilter.difficulty.map((item) => (
-            <option value={item}>{item}</option>
+            <option key={item} value={item}>
+              {item}
+            </option>
           ))}
         </select>
       </div>
       <div>
         <label htmlFor="length">Délka</label>
-        <select name="length" value={length} onChange={(e) => handleChange(e)}>
+        <select
+          name="length"
+          value={formValues.length}
+          onChange={(e) => handleChange(e)}
+        >
           {tripFilter.length.map((item) => (
-            <option value={item}>{item}</option>
+            <option key={item} value={item}>
+              {item}
+            </option>
           ))}
         </select>
       </div>
@@ -91,11 +101,11 @@ const Form = () => {
       <div>
         <label htmlFor="terrain">Terén</label>
         {tripFilter.terrainType.map((item) => (
-          <label>
+          <label key={item}>
             <input
               type="checkbox"
               name={item}
-              checked={terrain.includes(item)}
+              checked={formValues.terrain.includes(item)}
               onChange={() => handleCheckboxChange('terrain', item)}
             />
             {item}
@@ -105,11 +115,11 @@ const Form = () => {
       <div>
         <label htmlFor="features">Více možností</label>
         {tripFilter.features.map((item) => (
-          <label>
+          <label key={item}>
             <input
               type="checkbox"
               name={item}
-              checked={features.includes(item)}
+              checked={formValues.features.includes(item)}
               onChange={() => handleCheckboxChange('features', item)}
             />
             {item}
@@ -119,11 +129,11 @@ const Form = () => {
       <div>
         <label htmlFor="suitableFor">Vhodné pro</label>
         {tripFilter.suitableFor.map((item) => (
-          <label>
+          <label key={item}>
             <input
               type="checkbox"
               name={item}
-              checked={suitableFor.includes(item)}
+              checked={formValues.suitableFor.includes(item)}
               onChange={() => handleCheckboxChange('suitableFor', item)}
             />
             {item}
