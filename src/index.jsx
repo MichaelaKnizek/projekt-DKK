@@ -1,10 +1,10 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { HomePage } from './pages/HomePage';
-import FilterPage from './components/FilterPage/FilterPage';
-import TripsPage from './components/TripsPage/TripsPage';
-import ResultsPage from './components/ResultsPage/ResultsPage';
-import DetailPage from './components/DetailPage/DetailPage';
+import FilterPage from './pages/FilterPage/FilterPage';
+import TripsPage from './pages/TripsPage/TripsPage';
+import ResultsPage from './pages/ResultsPage/ResultsPage';
+import DetailPage from './pages/DetailPage/DetailPage';
 import './global.css';
 
 createRoot(document.querySelector('#app')).render(
