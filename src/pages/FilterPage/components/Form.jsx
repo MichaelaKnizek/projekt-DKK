@@ -28,6 +28,12 @@ const Form = () => {
         <input />
         Čas
       </label>
+      <label htmlFor="terrain">Terén</label>
+      <select>
+        {tripFilter.terrainType.map((item) => (
+          <option value={item}>{item}</option>
+        ))}
+      </select>
       <label htmlFor="features">Více možností</label>
       <select>
         {tripFilter.features.map((item) => (
