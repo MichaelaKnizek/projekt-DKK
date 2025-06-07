@@ -1,6 +1,4 @@
 import './TripsPage.css';
-
-import React from 'react';
 import TripCard from './components/TripCard';
 
 const TripsPage = () => {
