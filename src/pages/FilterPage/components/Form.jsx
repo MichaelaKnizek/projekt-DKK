@@ -6,13 +6,29 @@ import './Form.css';
 const Form = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   // console.log(searchParams);
+  const parseArray = (section) => {
+    const current = searchParams.get(section);
+    const parsedArray = current === null ? [] : current.split(',');
+    return parsedArray;
+  };
   const location = searchParams.get('location');
   const difficulty = searchParams.get('difficulty');
   const length = searchParams.get('length');
+  const terrain = parseArray('terrain');
 
-  const updateParams = (key, value) => {
+  const updateSimpleParams = (key, value) => {
     let params = new URLSearchParams(searchParams);
     params.set(key, value.toString());
+    setSearchParams(params);
+  };
+  const updateArrayParams = (key, listOfValues) => {
+    let params = new URLSearchParams(searchParams);
+    if (listOfValues.length > 0) {
+      params.set(key, listOfValues.join(','));
+    } else {
+      params.delete(key);
+    }
+    console.log(params.keys());
     setSearchParams(params);
   };
   const handleChange = (e) => {
@@ -20,9 +36,16 @@ const Form = () => {
     // console.log(e.target.name);
     const key = e.target.name;
     const { value } = e.target;
-    updateParams(key, value);
+    updateSimpleParams(key, value);
   };
-
+  const handleCheckboxChange = (section, item) => {
+    console.log(section, item);
+    const selectedItems = parseArray(section);
+    const updatedSelectedItems = selectedItems.includes(item)
+      ? selectedItems.filter((current) => current !== item)
+      : [...selectedItems, item];
+    updateArrayParams(section, updatedSelectedItems);
+  };
   return (
     <form>
       <div>
@@ -70,7 +93,8 @@ const Form = () => {
             <input
               type="checkbox"
               name={item}
-              onChange={(e) => handleChange(e)}
+              checked={terrain.includes(item)}
+              onChange={() => handleCheckboxChange('terrain', item)}
             />
             {item}
           </label>
