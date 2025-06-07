@@ -21,4 +21,5 @@ export const tripFilter = {
     'piknik',
     'klid',
   ],
+  suitableFor: ['kočárky', 'děti', 'psi'],
 };

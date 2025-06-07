@@ -5,8 +5,8 @@ import './Form.css';
 const Form = () => {
   return (
     <form>
-      <label htmlFor="location">Lokalita</label>
       <div>
+        <label htmlFor="location">Lokalita</label>
         <select>
           {tripFilter.locations.map((item) => (
             <option value={item}>{item}</option>
@@ -30,7 +30,6 @@ const Form = () => {
         </select>
       </div>
       <div>
-        {' '}
         <label>
           <input />
           Čas
@@ -38,19 +37,30 @@ const Form = () => {
       </div>
       <div>
         <label htmlFor="terrain">Terén</label>
-        <select>
-          {tripFilter.terrainType.map((item) => (
-            <option value={item}>{item}</option>
-          ))}
-        </select>
+        {tripFilter.terrainType.map((item) => (
+          <label>
+            <input type="checkbox" name={item} />
+            {item}
+          </label>
+        ))}
       </div>
       <div>
         <label htmlFor="features">Více možností</label>
-        <select>
-          {tripFilter.features.map((item) => (
-            <option value={item}>{item}</option>
-          ))}
-        </select>
+        {tripFilter.features.map((item) => (
+          <label>
+            <input type="checkbox" name={item} />
+            {item}
+          </label>
+        ))}
+      </div>
+      <div>
+        <label htmlFor="features">Vhodné pro</label>
+        {tripFilter.suitableFor.map((item) => (
+          <label>
+            <input type="checkbox" name={item} />
+            {item}
+          </label>
+        ))}
       </div>
     </form>
   );
