@@ -15,6 +15,8 @@ const Form = () => {
   const difficulty = searchParams.get('difficulty');
   const length = searchParams.get('length');
   const terrain = parseArray('terrain');
+  const features = parseArray('features');
+  const suitableFor = parseArray('suitableFor');
 
   const updateSimpleParams = (key, value) => {
     let params = new URLSearchParams(searchParams);
@@ -104,7 +106,12 @@ const Form = () => {
         <label htmlFor="features">Více možností</label>
         {tripFilter.features.map((item) => (
           <label>
-            <input type="checkbox" name={item} />
+            <input
+              type="checkbox"
+              name={item}
+              checked={features.includes(item)}
+              onChange={() => handleCheckboxChange('features', item)}
+            />
             {item}
           </label>
         ))}
@@ -113,7 +120,12 @@ const Form = () => {
         <label htmlFor="suitableFor">Vhodné pro</label>
         {tripFilter.suitableFor.map((item) => (
           <label>
-            <input type="checkbox" name={item} />
+            <input
+              type="checkbox"
+              name={item}
+              checked={suitableFor.includes(item)}
+              onChange={() => handleCheckboxChange('suitableFor', item)}
+            />
             {item}
           </label>
         ))}
