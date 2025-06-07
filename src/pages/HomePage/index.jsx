@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 export const HomePage = () => {
   return (
-    <div className="container">
+    <div className="photo">
       <header>
         <h1>Do kopce v klidu</h1>
       </header>
