@@ -1,23 +1,22 @@
 import './style.css';
+import { NavLink } from 'react-router';
 
 export const HomePage = () => {
   return (
     <div className="container">
       <header>
-        <div className="logo" />
-        <h1>React webová aplikace</h1>
+        <h1>Do kopce v klidu</h1>
       </header>
       <main>
-        <p>
-          Startovací šablona pro webovou aplikaci v Reactu. Vytvořeno pomocí
-          {" "}
-          <a href="https://www.npmjs.com/package/create-czechitas-app">create-czechitas-app</a>
-          .
-        </p>
+        <nav className="nav__btn">
+          <NavLink to="/trips" className="btn">
+            Chci připravený výlet
+          </NavLink>
+          <NavLink to="/filter" className="btn">
+            Chci jít vlastní cestou
+          </NavLink>
+        </nav>
       </main>
-      <footer>
-        <p>Czechitas, Digitální akademie: Web</p>
-      </footer>
     </div>
   );
 };
