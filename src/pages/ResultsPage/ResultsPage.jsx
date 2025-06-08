@@ -33,10 +33,10 @@ const executeFilter = (trips, filterValues) => {
 const ResultsPage = () => {
   const [searchParams] = useSearchParams();
   const filterValues = readFilterValues(searchParams);
-  console.log(filterValues);
+  //console.log(filterValues);
   const filterTrips = executeFilter(trips, filterValues);
 
-  console.log(filterTrips);
+  //console.log(filterTrips);
   return (
     <div>
       {filterTrips.map((trip) => (

@@ -1,6 +1,70 @@
-form {
+a {
+  text-decoration: none;
+}
+
+.form {
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  width: 50%;
+  margin: 0 21px;
+
 }
+
+.form_item {
+  margin-bottom: 15px;
+}
+
+.input_title {
+  line-height: 2;
+  color: #1B3039;
+}
+
+.input_box .MuiAccordionDetails-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+}
+
+.input_details {
+  width: 50px;
+  height: 50px;
+
+}
+
+.input_details .Mui-checked {
+  background-color: transparent;
+}
+
+.input_details .Mui-checked:active,
+.input_details .Mui-checked:hover,
+.input_details .MuiCheckbox-action:active,
+.input_details .MuiCheckbox-action:hover {
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.input_details img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.form_btn {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 0.5em 1.5em 0.5em 1.2em;
+  color: white;
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  background-color: #1b3039;
+}
+
+.form_btn:hover {}
