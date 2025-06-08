@@ -5,6 +5,8 @@ import { NavLink } from 'react-router';
 import { readFilterValues } from '../../../utils';
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
+import Checkbox from '@mui/joy/Checkbox';
+
 import './Form.css';
 
 const Form = () => {
@@ -28,11 +30,7 @@ const Form = () => {
     console.log(params.keys());
     setSearchParams(params);
   };
-  const handleChange = (e) => {
-    // console.log(e.target.value);
-    // console.log(e.target.name);
-    const key = e.target.name;
-    const { value } = e.target;
+  const handleChange = (key, value) => {
     updateSimpleParams(key, value);
   };
   const handleCheckboxChange = (section, item) => {
@@ -43,49 +41,53 @@ const Form = () => {
       : [...selectedItems, item];
     updateArrayParams(section, updatedSelectedItems);
   };
+  //console.log(formValues);
   return (
     <form>
       <div>
         <label htmlFor="location">Lokalita</label>
-        <select
+        <Select
+          variant="soft"
           name="location"
           value={formValues.location}
-          onChange={(e) => handleChange(e)}
+          onChange={(e, value) => handleChange('location', value)}
         >
           {tripFilter.locations.map((item) => (
-            <option key={item} value={item}>
+            <Option key={item} value={item}>
               {item}
-            </option>
+            </Option>
           ))}
-        </select>
+        </Select>
       </div>
       <div>
         <label htmlFor="difficulty">Obtížnost</label>
-        <select
+        <Select
+          variant="soft"
           name="difficulty"
           value={formValues.difficulty}
-          onChange={(e) => handleChange(e)}
+          onChange={(e, value) => handleChange('difficulty', value)}
         >
           {tripFilter.difficulty.map((item) => (
-            <option key={item} value={item}>
+            <Option key={item} value={item}>
               {item}
-            </option>
+            </Option>
           ))}
-        </select>
+        </Select>
       </div>
       <div>
         <label htmlFor="lengthRange">Délka</label>
-        <select
+        <Select
+          variant="soft"
           name="lengthRange"
-          value={formValues.length}
-          onChange={(e) => handleChange(e)}
+          value={formValues.lengthRange}
+          onChange={(e, value) => handleChange('lengthRange', value)}
         >
           {tripFilter.lengthRange.map((item) => (
-            <option key={item} value={item}>
+            <Option key={item} value={item}>
               {item}
-            </option>
+            </Option>
           ))}
-        </select>
+        </Select>
       </div>
 
       <div>
@@ -104,6 +106,7 @@ const Form = () => {
       </div>
       <div>
         <label htmlFor="features">Více možností</label>
+
         {tripFilter.features.map((item) => (
           <label key={item}>
             <input
