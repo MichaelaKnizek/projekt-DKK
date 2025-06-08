@@ -8,6 +8,7 @@ import Option from '@mui/joy/Option';
 import Checkbox from '@mui/joy/Checkbox';
 
 import './Form.css';
+import { ListItem } from '@mui/joy';
 
 const Form = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -93,44 +94,38 @@ const Form = () => {
       <div>
         <label htmlFor="terrain">Terén</label>
         {tripFilter.terrainType.map((item) => (
-          <label key={item}>
-            <input
-              type="checkbox"
-              name={item}
-              checked={formValues.terrain?.includes(item)}
-              onChange={() => handleCheckboxChange('terrain', item)}
-            />
-            {item}
-          </label>
+          <Checkbox
+            key={item}
+            variant="soft"
+            label={item}
+            checked={formValues.terrain?.includes(item)}
+            onChange={() => handleCheckboxChange('terrain', item)}
+          ></Checkbox>
         ))}
       </div>
       <div>
         <label htmlFor="features">Více možností</label>
 
         {tripFilter.features.map((item) => (
-          <label key={item}>
-            <input
-              type="checkbox"
-              name={item}
-              checked={formValues.features?.includes(item)}
-              onChange={() => handleCheckboxChange('features', item)}
-            />
-            {item}
-          </label>
+          <Checkbox
+            key={item}
+            variant="soft"
+            label={item}
+            checked={formValues.features?.includes(item)}
+            onChange={() => handleCheckboxChange('features', item)}
+          ></Checkbox>
         ))}
       </div>
       <div>
         <label htmlFor="suitableFor">Vhodné pro</label>
         {tripFilter.suitableFor.map((item) => (
-          <label key={item}>
-            <input
-              type="checkbox"
-              name={item}
-              checked={formValues.suitableFor?.includes(item)}
-              onChange={() => handleCheckboxChange('suitableFor', item)}
-            />
-            {item}
-          </label>
+          <Checkbox
+            key={item}
+            variant="soft"
+            label={item}
+            checked={formValues.suitableFor?.includes(item)}
+            onChange={() => handleCheckboxChange('suitableFor', item)}
+          ></Checkbox>
         ))}
       </div>
       <NavLink to={`/result?${searchParams.toString()}`}>Vybrat</NavLink>
