@@ -1,7 +1,7 @@
 export const tripFilter = {
-  locations: ['Jizerky', 'Krkonose', 'Beskydy'],
+  locations: ['Jizerky', 'Krkonoše', 'Beskydy'],
   difficulty: ['lehká', 'střední', 'těžká'],
-  length: ['<10', '10-15', '15-20', '20>'],
+  lengthRange: ['<10', '10-15', '15-20', '20>'],
   terrainType: [
     'asfalt',
     'lesní cesta',
