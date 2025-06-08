@@ -1,7 +1,7 @@
 const defaultValues = {
   location: 'Jizerky',
   difficulty: 'lehká',
-  lengthRange: '<10',
+  lengthRange: '10-15',
 };
 
 export const readFilterValues = (searchParams) => {

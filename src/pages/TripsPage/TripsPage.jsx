@@ -1,19 +1,45 @@
 import './TripsPage.css';
 import Header from '../components/Header';
 import TripCard from './components/TripCard';
+import { tripTypes } from '../../../data/trip-options';
+import { useState } from 'react';
+import { Select } from '@mui/joy';
+import { Option } from '@mui/joy';
+import { tripFilter } from '../../../data/trip-options';
 
 const TripsPage = () => {
+  const [location, setLocation] = useState('Jizerky');
+  const handleChange = (value) => {
+    setLocation(value);
+  };
   return (
     <div className="tripspage-photo">
       <div className="container">
         <Header />
+        <div className="form_item">
+          <label className="input_title" htmlFor="location">
+            Lokalita
+          </label>
+          <Select
+            variant="soft"
+            value={location}
+            onChange={(e, value) => handleChange(value)}
+          >
+            {tripFilter.locations.map((item) => (
+              <Option key={item} value={item}>
+                {item}
+              </Option>
+            ))}
+          </Select>
+        </div>
         <div className="trips-list">
-          <TripCard />
-          <TripCard />
-          <TripCard />
-          <TripCard />
-          <TripCard />
-          <TripCard />
+          {tripTypes.map((type) => (
+            <TripCard
+              name={type.name}
+              filter={type.filter}
+              location={location}
+            />
+          ))}
         </div>
       </div>
     </div>

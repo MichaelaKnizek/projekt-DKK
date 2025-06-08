@@ -51,6 +51,7 @@ export const tripTypes = [
   },
   {
     name: 'Potřebuju se vybít',
-    filter: '?terrain=skály%2Cžebříky%2Ckamenitá+cesta%2C&features=vodopády%2C',
+    filter:
+      '?terrain=kamenitá+cesta&difficulty=těžká&lengthRange=15-20&location=Krkonoše',
   },
 ];

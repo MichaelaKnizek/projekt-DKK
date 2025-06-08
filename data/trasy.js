@@ -16,7 +16,7 @@ export const trips = [
     elevationGainM: 90,
     durationH: 3,
     difficulty: 'lehká',
-    terrainType: [
+    terrain: [
       'asfalt',
       'lesní cesta',
       'dřevěný chodník',
@@ -56,7 +56,7 @@ export const trips = [
     elevationGainM: 725,
     durationH: 6,
     difficulty: 'střední',
-    terrainType: [
+    terrain: [
       'asfalt',
       'lesní cesta',
       'dřevěný chodník',
@@ -97,7 +97,7 @@ export const trips = [
     elevationGainM: 900,
     durationH: 9,
     difficulty: 'těžká',
-    terrainType: [
+    terrain: [
       'asfalt',
       'lesní cesta',
       'dřevěný chodník',
@@ -135,7 +135,7 @@ export const trips = [
     elevationGainM: 250,
     durationH: 3,
     difficulty: 'lehká',
-    terrainType: ['asfalt', 'lesní cesta'],
+    terrain: ['asfalt', 'lesní cesta'],
     suitableFor: ['děti', 'psi'],
     features: ['výhledy', 'památník', 'občerstvení'],
     accessibility: ['lanovka', 'auto', 'autobus'],
@@ -156,7 +156,7 @@ export const trips = [
     elevationGainM: 950,
     durationH: 6,
     difficulty: 'těžká',
-    terrainType: ['kamenitá cesta', 'žulové schody', 'horské sedlo'],
+    terrain: ['kamenitá cesta', 'žulové schody', 'horské sedlo'],
     suitableFor: ['psi'],
     features: ['výhledy', 'vrchol', 'občerstvení'],
     accessibility: ['bus', 'auto'],
@@ -177,7 +177,7 @@ export const trips = [
     elevationGainM: 50,
     durationH: 1.5,
     difficulty: 'lehká',
-    terrainType: ['dřevěný chodník', 'lesní cesta'],
+    terrain: ['dřevěný chodník', 'lesní cesta'],
     suitableFor: ['kočárky', 'děti', 'psi'],
     features: ['rašeliniště', 'naučné stezky', 'klid'],
     accessibility: ['bus', 'auto'],
@@ -198,7 +198,7 @@ export const trips = [
     elevationGainM: 300,
     durationH: 3,
     difficulty: 'střední',
-    terrainType: ['skály', 'schody', 'lesní cesta'],
+    terrain: ['skály', 'schody', 'lesní cesta'],
     suitableFor: ['děti'],
     features: ['skály', 'výhledy', 'piknik'],
     accessibility: ['bus', 'auto'],
@@ -219,7 +219,7 @@ export const trips = [
     elevationGainM: 350,
     durationH: 3.5,
     difficulty: 'střední',
-    terrainType: ['lesní cesta', 'schody', 'pískovec'],
+    terrain: ['lesní cesta', 'schody', 'pískovec'],
     suitableFor: ['děti', 'psi'],
     features: ['skalní brána', 'výhledy', 'občerstvení'],
     accessibility: ['vlak', 'bus', 'auto'],

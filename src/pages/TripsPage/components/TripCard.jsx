@@ -1,13 +1,14 @@
+import { NavLink } from 'react-router';
 import './TripCard.css';
 
 import React from 'react';
 
-const TripCard = () => {
+const TripCard = ({ name, filter, location }) => {
   return (
-    <div className="trip-card">
+    <NavLink to={`/result${filter}&location=${location}`} className="trip-card">
       <img className="trip-card__image"></img>
-      <p className="trip-card__name">Romantika pro dva</p>
-    </div>
+      <p className="trip-card__name">{name}</p>
+    </NavLink>
   );
 };
 
