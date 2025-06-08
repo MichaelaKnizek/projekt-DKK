@@ -123,10 +123,11 @@ const Form = () => {
           <AccordionSummary className="input_title">
             Více možností
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className="input_box">
             {tripFilter.features.map((item) => (
               <Checkbox
                 key={item}
+                className="input_details"
                 variant="soft"
                 label={<img src={`/icons/${item}.png`}></img>}
                 checked={formValues.features?.includes(item)}
@@ -137,23 +138,27 @@ const Form = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion>
-          <AccordionSummary>Vhodné pro</AccordionSummary>
-          <AccordionDetails>
+          <AccordionSummary className="input_title">
+            Vhodné pro
+          </AccordionSummary>
+          <AccordionDetails className="input_box">
             {tripFilter.suitableFor.map((item) => (
               <Checkbox
                 key={item}
+                className="input_details"
                 variant="soft"
                 label={<img src={`/icons/${item}.png`}></img>}
                 checked={formValues.suitableFor?.includes(item)}
                 onChange={() => handleCheckboxChange('suitableFor', item)}
-                className="checkbox-item"
                 disableIcon
               ></Checkbox>
             ))}
           </AccordionDetails>
         </Accordion>
       </AccordionGroup>
-      <NavLink to={`/result?${searchParams.toString()}`}>Vybrat</NavLink>
+      <NavLink className="form_btn" to={`/result?${searchParams.toString()}`}>
+        Vybrat
+      </NavLink>
     </form>
   );
 };
