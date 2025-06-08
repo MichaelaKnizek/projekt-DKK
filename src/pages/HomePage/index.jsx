@@ -3,9 +3,9 @@ import { NavLink } from 'react-router';
 
 export const HomePage = () => {
   return (
-    <div className="photo">
+    <div className="homepage-photo">
       <header>
-        <h1 className="title">Do kopce v klidu</h1>
+        <h1 className="homepage-title">Do kopce v klidu</h1>
       </header>
       <nav className="navlink">
         <NavLink to="/trips" className="btn">

@@ -1,5 +1,5 @@
-.photo {
-  background-image: url(../../../public/images/landing_page.png);
+.homepage-photo {
+  background-image: url(../../../public/images/landing_page_velka.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -12,7 +12,7 @@
   gap: 4rem;
 }
 
-.title {
+.homepage-title {
   display: flex;
   margin-top: 40vh;
 }
@@ -46,7 +46,7 @@
 
 @media (min-width: 1200px) {
 
-  .title {
+  .homepage-title {
     font-size: 2.5rem;
     margin-top: 38vh;
   }
