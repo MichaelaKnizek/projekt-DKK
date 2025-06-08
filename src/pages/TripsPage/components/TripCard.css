@@ -1,4 +1,4 @@
-.trip__card {
+.trip-card {
   padding: 1rem 0.5rem;
   margin-bottom: 1rem;
   background-color: #DAE9F6;
@@ -10,7 +10,4 @@
   color: #1A221Dff;
   font-weight: bold;
   text-align: center;
-
-  /* display: flex;
-  justify-content: center; */
 }

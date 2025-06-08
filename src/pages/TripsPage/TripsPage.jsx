@@ -4,13 +4,18 @@ import TripCard from './components/TripCard';
 
 const TripsPage = () => {
   return (
-    <div className="container">
-      <Header />
-      <main>
-        <div className="trip__page">
+    <div className="tripspage-photo">
+      <div className="container">
+        <Header />
+        <div className="trips-list">
+          <TripCard />
+          <TripCard />
+          <TripCard />
+          <TripCard />
+          <TripCard />
           <TripCard />
         </div>
-      </main>
+      </div>
     </div>
   );
 };

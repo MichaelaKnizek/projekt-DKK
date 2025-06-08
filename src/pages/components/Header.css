@@ -1,14 +1,58 @@
 .header {
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
 
   color: #1A221Dff;
+  font-size: 1.2rem;
   font-weight: bold;
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
 }
 
 .navicons {
   display: flex;
   gap: 1rem;
+}
+
+.header__refresh {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #1A221Dff;
+
+  background-image: url("../../../public/icons/refresh.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.header__home {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #1A221Dff;
+
+  background-image: url("../../../public/icons/home.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+@media (min-width: 840px) {
+
+  .header {
+    padding: 5rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .header {
+    padding: 6rem 2rem;
+    font-size: 1.5rem;
+  }
 }

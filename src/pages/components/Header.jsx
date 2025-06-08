@@ -4,15 +4,14 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div>
-      <header className="header">
-        <p className="header__title">Vyber si svůj výlet</p>
-        <nav className="navicons">
-          <div className="header__refresh">aaa</div>
-          <div className="header__home">bbb</div>
-        </nav>
-      </header>
-    </div>
+    <header className="header">
+      <p className="header__title">Vyber si svůj výlet</p>
+      <nav className="navicons">
+        <div className="header__refresh"></div>
+        {/* <div className="header__home"></div> */}
+        <a href="/" className="header__home"></a>
+      </nav>
+    </header>
   );
 };
 
