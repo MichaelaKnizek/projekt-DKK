@@ -49,9 +49,11 @@ const Form = () => {
   };
   //console.log(formValues);
   return (
-    <form>
-      <div>
-        <label htmlFor="location">Lokalita</label>
+    <form className="form">
+      <div className="form_item">
+        <label className="input_title" htmlFor="location">
+          Lokalita
+        </label>
         <Select
           variant="soft"
           name="location"
@@ -65,8 +67,10 @@ const Form = () => {
           ))}
         </Select>
       </div>
-      <div>
-        <label htmlFor="difficulty">Obtížnost</label>
+      <div className="form_item">
+        <label htmlFor="difficulty" className="input_title">
+          Obtížnost
+        </label>
         <Select
           variant="soft"
           name="difficulty"
@@ -80,8 +84,10 @@ const Form = () => {
           ))}
         </Select>
       </div>
-      <div>
-        <label htmlFor="lengthRange">Délka</label>
+      <div className="form_item">
+        <label htmlFor="lengthRange" className="input_title">
+          Délka
+        </label>
         <Select
           variant="soft"
           name="lengthRange"
@@ -98,11 +104,12 @@ const Form = () => {
 
       <AccordionGroup variant="soft">
         <Accordion>
-          <AccordionSummary>Terén</AccordionSummary>
-          <AccordionDetails>
+          <AccordionSummary className="input_title">Terén</AccordionSummary>
+          <AccordionDetails className="input_box">
             {tripFilter.terrainType.map((item) => (
               <Checkbox
                 key={item}
+                className="input_details"
                 variant="soft"
                 label={<img src={`/icons/${item}.png`}></img>}
                 checked={formValues.terrain?.includes(item)}
@@ -113,7 +120,9 @@ const Form = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion>
-          <AccordionSummary>Více možností</AccordionSummary>
+          <AccordionSummary className="input_title">
+            Více možností
+          </AccordionSummary>
           <AccordionDetails>
             {tripFilter.features.map((item) => (
               <Checkbox
@@ -137,6 +146,7 @@ const Form = () => {
                 label={<img src={`/icons/${item}.png`}></img>}
                 checked={formValues.suitableFor?.includes(item)}
                 onChange={() => handleCheckboxChange('suitableFor', item)}
+                className="checkbox-item"
                 disableIcon
               ></Checkbox>
             ))}
