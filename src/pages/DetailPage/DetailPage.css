@@ -1,1 +1,15 @@
+.detailpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.detailpage-photo {
+  background-image: url(../../../public/images/lehka1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  /* height: vh; */
+}
