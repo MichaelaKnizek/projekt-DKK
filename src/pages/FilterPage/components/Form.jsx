@@ -104,9 +104,10 @@ const Form = () => {
               <Checkbox
                 key={item}
                 variant="soft"
-                label={item}
+                label={<img src={`/icons/${item}.png`}></img>}
                 checked={formValues.terrain?.includes(item)}
                 onChange={() => handleCheckboxChange('terrain', item)}
+                disableIcon
               ></Checkbox>
             ))}
           </AccordionDetails>
@@ -118,9 +119,10 @@ const Form = () => {
               <Checkbox
                 key={item}
                 variant="soft"
-                label={item}
+                label={<img src={`/icons/${item}.png`}></img>}
                 checked={formValues.features?.includes(item)}
                 onChange={() => handleCheckboxChange('features', item)}
+                disableIcon
               ></Checkbox>
             ))}
           </AccordionDetails>
@@ -132,9 +134,10 @@ const Form = () => {
               <Checkbox
                 key={item}
                 variant="soft"
-                label={item}
+                label={<img src={`/icons/${item}.png`}></img>}
                 checked={formValues.suitableFor?.includes(item)}
                 onChange={() => handleCheckboxChange('suitableFor', item)}
+                disableIcon
               ></Checkbox>
             ))}
           </AccordionDetails>
