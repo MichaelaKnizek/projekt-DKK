@@ -3,13 +3,15 @@ import { tripFilter } from '../../../../data/trip-options';
 import { useSearchParams } from 'react-router';
 import { NavLink } from 'react-router';
 import { readFilterValues } from '../../../utils';
+import Select from '@mui/joy/Select';
+import Option from '@mui/joy/Option';
 import './Form.css';
 
 const Form = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const formValues = readFilterValues(searchParams);
-  console.log(formValues);
+  //console.log(formValues);
 
   const updateSimpleParams = (key, value) => {
     let params = new URLSearchParams(searchParams);
