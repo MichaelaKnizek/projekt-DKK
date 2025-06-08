@@ -1,0 +1,14 @@
+.header {
+  padding: 3rem 2rem;
+
+  color: #1A221Dff;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.navicons {
+  display: flex;
+  gap: 1rem;
+}
