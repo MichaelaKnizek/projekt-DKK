@@ -1,16 +1,11 @@
 import './TripsPage.css';
+import Header from '../components/Header';
 import TripCard from './components/TripCard';
 
 const TripsPage = () => {
   return (
     <div className="container">
-      <header>
-        <h2>Vyber si svůj výlet</h2>
-        <nav>
-          <div className="refresh"></div>
-          <div className="cross"></div>
-        </nav>
-      </header>
+      <Header />
       <main>
         <div className="trip__page">
           <TripCard />
