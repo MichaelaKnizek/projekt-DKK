@@ -2,14 +2,14 @@ import React from 'react';
 import { tripFilter } from '../../../../data/trip-options';
 import { useSearchParams } from 'react-router';
 import { NavLink } from 'react-router';
-import { parseSearchParams } from '../../../utils';
+import { readFilterValues } from '../../../utils';
 import './Form.css';
 
 const Form = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  // console.log(searchParams);
 
-  const formValues = parseSearchParams(searchParams);
+  const formValues = readFilterValues(searchParams);
+  console.log(formValues);
 
   const updateSimpleParams = (key, value) => {
     let params = new URLSearchParams(searchParams);
@@ -19,7 +19,7 @@ const Form = () => {
   const updateArrayParams = (key, listOfValues) => {
     let params = new URLSearchParams(searchParams);
     if (listOfValues.length > 0) {
-      params.set(key, listOfValues.join(','));
+      params.set(key, listOfValues.join(',') + ',');
     } else {
       params.delete(key);
     }
@@ -35,7 +35,7 @@ const Form = () => {
   };
   const handleCheckboxChange = (section, item) => {
     console.log(section, item);
-    const selectedItems = formValues[section];
+    const selectedItems = formValues[section] ?? [];
     const updatedSelectedItems = selectedItems.includes(item)
       ? selectedItems.filter((current) => current !== item)
       : [...selectedItems, item];
@@ -72,25 +72,20 @@ const Form = () => {
         </select>
       </div>
       <div>
-        <label htmlFor="length">Délka</label>
+        <label htmlFor="lengthRange">Délka</label>
         <select
-          name="length"
+          name="lengthRange"
           value={formValues.length}
           onChange={(e) => handleChange(e)}
         >
-          {tripFilter.length.map((item) => (
+          {tripFilter.lengthRange.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
           ))}
         </select>
       </div>
-      <div>
-        <label>
-          <input />
-          Čas
-        </label>
-      </div>
+
       <div>
         <label htmlFor="terrain">Terén</label>
         {tripFilter.terrainType.map((item) => (
@@ -98,7 +93,7 @@ const Form = () => {
             <input
               type="checkbox"
               name={item}
-              checked={formValues.terrain.includes(item)}
+              checked={formValues.terrain?.includes(item)}
               onChange={() => handleCheckboxChange('terrain', item)}
             />
             {item}
@@ -112,7 +107,7 @@ const Form = () => {
             <input
               type="checkbox"
               name={item}
-              checked={formValues.features.includes(item)}
+              checked={formValues.features?.includes(item)}
               onChange={() => handleCheckboxChange('features', item)}
             />
             {item}
@@ -126,7 +121,7 @@ const Form = () => {
             <input
               type="checkbox"
               name={item}
-              checked={formValues.suitableFor.includes(item)}
+              checked={formValues.suitableFor?.includes(item)}
               onChange={() => handleCheckboxChange('suitableFor', item)}
             />
             {item}
