@@ -50,6 +50,12 @@ a {
   border-radius: 50%;
 }
 
+.input_details.Mui-checked img {
+
+  filter: invert(0.7) brightness(1.5) contrast(0.8);
+
+}
+
 .form_btn {
   margin-top: 50px;
   width: 100%;

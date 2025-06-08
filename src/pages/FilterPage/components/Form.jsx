@@ -96,7 +96,7 @@ const Form = () => {
         >
           {tripFilter.lengthRange.map((item) => (
             <Option key={item} value={item}>
-              {item}
+              {item} km
             </Option>
           ))}
         </Select>
