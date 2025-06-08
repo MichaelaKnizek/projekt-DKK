@@ -10,7 +10,6 @@ const filterStringEqual = (trip, key, value) => {
 };
 
 const filterInterSection = (trip, key, values) => {
-  console.log('trip', trip);
   if (values === undefined) {
     return true;
   }
@@ -36,7 +35,7 @@ const ResultsPage = () => {
   //console.log(filterValues);
   const filterTrips = executeFilter(trips, filterValues);
 
-  //console.log(filterTrips);
+  console.log(filterTrips);
   return (
     <div>
       {filterTrips.map((trip) => (
