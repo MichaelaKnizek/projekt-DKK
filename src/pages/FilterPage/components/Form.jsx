@@ -6,9 +6,14 @@ import { readFilterValues } from '../../../utils';
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
 import Checkbox from '@mui/joy/Checkbox';
-
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionGroup,
+  AccordionSummary,
+  ListItem,
+} from '@mui/joy';
 import './Form.css';
-import { ListItem } from '@mui/joy';
 
 const Form = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -91,43 +96,50 @@ const Form = () => {
         </Select>
       </div>
 
-      <div>
-        <label htmlFor="terrain">Terén</label>
-        {tripFilter.terrainType.map((item) => (
-          <Checkbox
-            key={item}
-            variant="soft"
-            label={item}
-            checked={formValues.terrain?.includes(item)}
-            onChange={() => handleCheckboxChange('terrain', item)}
-          ></Checkbox>
-        ))}
-      </div>
-      <div>
-        <label htmlFor="features">Více možností</label>
-
-        {tripFilter.features.map((item) => (
-          <Checkbox
-            key={item}
-            variant="soft"
-            label={item}
-            checked={formValues.features?.includes(item)}
-            onChange={() => handleCheckboxChange('features', item)}
-          ></Checkbox>
-        ))}
-      </div>
-      <div>
-        <label htmlFor="suitableFor">Vhodné pro</label>
-        {tripFilter.suitableFor.map((item) => (
-          <Checkbox
-            key={item}
-            variant="soft"
-            label={item}
-            checked={formValues.suitableFor?.includes(item)}
-            onChange={() => handleCheckboxChange('suitableFor', item)}
-          ></Checkbox>
-        ))}
-      </div>
+      <AccordionGroup variant="soft">
+        <Accordion>
+          <AccordionSummary>Terén</AccordionSummary>
+          <AccordionDetails>
+            {tripFilter.terrainType.map((item) => (
+              <Checkbox
+                key={item}
+                variant="soft"
+                label={item}
+                checked={formValues.terrain?.includes(item)}
+                onChange={() => handleCheckboxChange('terrain', item)}
+              ></Checkbox>
+            ))}
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary>Více možností</AccordionSummary>
+          <AccordionDetails>
+            {tripFilter.features.map((item) => (
+              <Checkbox
+                key={item}
+                variant="soft"
+                label={item}
+                checked={formValues.features?.includes(item)}
+                onChange={() => handleCheckboxChange('features', item)}
+              ></Checkbox>
+            ))}
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary>Vhodné pro</AccordionSummary>
+          <AccordionDetails>
+            {tripFilter.suitableFor.map((item) => (
+              <Checkbox
+                key={item}
+                variant="soft"
+                label={item}
+                checked={formValues.suitableFor?.includes(item)}
+                onChange={() => handleCheckboxChange('suitableFor', item)}
+              ></Checkbox>
+            ))}
+          </AccordionDetails>
+        </Accordion>
+      </AccordionGroup>
       <NavLink to={`/result?${searchParams.toString()}`}>Vybrat</NavLink>
     </form>
   );
