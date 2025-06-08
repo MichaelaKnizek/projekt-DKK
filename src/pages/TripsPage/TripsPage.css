@@ -1,0 +1,30 @@
+.tripspage-photo {
+  background-image: url(../../../public/images/landing_page_blur_7.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  height: 100vh;
+  overflow: auto;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem; */
+}
+
+.container {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.trips-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* width: 100%; */
+  max-width: 36rem;
+}
