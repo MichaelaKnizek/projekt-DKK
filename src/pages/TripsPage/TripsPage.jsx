@@ -6,11 +6,15 @@ import { useState } from 'react';
 import { Select } from '@mui/joy';
 import { Option } from '@mui/joy';
 import { tripFilter } from '../../../data/trip-options';
+import { useSearchParams } from 'react-router';
 
 const TripsPage = () => {
-  const [location, setLocation] = useState('Jizerky');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const defaultLocation = searchParams.get('location') || 'Jizerky';
+  const [location, setLocation] = useState(defaultLocation);
   const handleChange = (value) => {
     setLocation(value);
+    setSearchParams({ location: value });
   };
   return (
     <div className="tripspage-photo">
