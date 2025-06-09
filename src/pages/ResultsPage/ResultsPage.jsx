@@ -1,7 +1,11 @@
 import React from 'react';
 import { trips } from '../../../data/trasy';
-import { useSearchParams } from 'react-router';
+import { NavLink, useSearchParams } from 'react-router';
 import { readFilterValues } from '../../utils.js';
+import Header from '../components/Header.jsx';
+import './ResultsPage.css';
+import ResultsCard from './ResultsCard.jsx';
+
 const filterStringEqual = (trip, key, value) => {
   if (value === undefined) {
     return true;
@@ -34,19 +38,22 @@ const ResultsPage = () => {
   const filterValues = readFilterValues(searchParams);
   //console.log(filterValues);
   const filterTrips = executeFilter(trips, filterValues);
-
   console.log(filterTrips);
   return (
-    <div>
-      {filterTrips.map((trip) => (
-        <div key={trip.id}>
-          <div>
-            <img src={trip.imageUrl} alt="" />
-          </div>
-          <h2>{trip.name}</h2>
-          <a href="#">Chci sem</a>
+    <div className="tripspage-photo">
+      <div className="container">
+        <Header />
+        <div className="trips-list">
+          {filterTrips.map((trip) => (
+            <ResultsCard
+              key={trip.id}
+              name={trip.name}
+              img={trip.imageUrl}
+              id={trip.id}
+            />
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };
