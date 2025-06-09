@@ -6,7 +6,7 @@ import React from 'react';
 const ResultsCard = ({ name, img, id, filter }) => {
   return (
     <>
-      <NavLink to={`/detail/${id.toString()}`}>
+      <NavLink to={`/detail?id=${id}`}>
         <div>
           <div>
             <img src={img} alt="" />
