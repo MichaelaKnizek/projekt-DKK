@@ -1,0 +1,19 @@
+.info-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 1rem;
+  background-color: #DAE9F6;
+  border: none;
+  border-radius: 4px;
+  width: 23%;
+  height: 85px;
+
+  color: #1A221Dff;
+  text-align: center;
+}
+
+.info-tile__title {
+  font-weight: bold;
+}
