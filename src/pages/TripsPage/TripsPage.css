@@ -24,12 +24,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* width: 100%; */
   max-width: 36rem;
 }
 
-.form_item {
+.form_item-trip {
   width: 90%;
   margin: 1rem auto;
 
