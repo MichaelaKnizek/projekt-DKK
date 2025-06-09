@@ -13,6 +13,8 @@ import {
   AccordionSummary,
   ListItem,
 } from '@mui/joy';
+
+import Header from '../../components/Header';
 import './Form.css';
 
 const Form = () => {
@@ -49,117 +51,129 @@ const Form = () => {
   };
   //console.log(formValues);
   return (
-    <form className="form">
-      <div className="form_item">
-        <label className="input_title" htmlFor="location">
-          Lokalita
-        </label>
-        <Select
-          variant="soft"
-          name="location"
-          value={formValues.location}
-          onChange={(e, value) => handleChange('location', value)}
-        >
-          {tripFilter.locations.map((item) => (
-            <Option key={item} value={item}>
-              {item}
-            </Option>
-          ))}
-        </Select>
-      </div>
-      <div className="form_item">
-        <label htmlFor="difficulty" className="input_title">
-          Obtížnost
-        </label>
-        <Select
-          variant="soft"
-          name="difficulty"
-          value={formValues.difficulty}
-          onChange={(e, value) => handleChange('difficulty', value)}
-        >
-          {tripFilter.difficulty.map((item) => (
-            <Option key={item} value={item}>
-              {item}
-            </Option>
-          ))}
-        </Select>
-      </div>
-      <div className="form_item">
-        <label htmlFor="lengthRange" className="input_title">
-          Délka
-        </label>
-        <Select
-          variant="soft"
-          name="lengthRange"
-          value={formValues.lengthRange}
-          onChange={(e, value) => handleChange('lengthRange', value)}
-        >
-          {tripFilter.lengthRange.map((item) => (
-            <Option key={item} value={item}>
-              {item} km
-            </Option>
-          ))}
-        </Select>
-      </div>
+    <div className="tripspage-photo">
+      <div className="container">
+        <Header />
+        <form className="form">
+          <div className="form_item">
+            <label className="input_title" htmlFor="location">
+              Lokalita
+            </label>
+            <Select
+              variant="soft"
+              name="location"
+              value={formValues.location}
+              onChange={(e, value) => handleChange('location', value)}
+            >
+              {tripFilter.locations.map((item) => (
+                <Option key={item} value={item}>
+                  {item}
+                </Option>
+              ))}
+            </Select>
+          </div>
+          <div className="form_item">
+            <label htmlFor="difficulty" className="input_title">
+              Obtížnost
+            </label>
+            <Select
+              variant="soft"
+              name="difficulty"
+              value={formValues.difficulty}
+              onChange={(e, value) => handleChange('difficulty', value)}
+            >
+              {tripFilter.difficulty.map((item) => (
+                <Option key={item} value={item}>
+                  {item}
+                </Option>
+              ))}
+            </Select>
+          </div>
+          <div className="form_item form_item-length">
+            <label htmlFor="lengthRange" className="input_title">
+              Délka
+            </label>
+            <Select
+              variant="soft"
+              name="lengthRange"
+              value={formValues.lengthRange}
+              onChange={(e, value) => handleChange('lengthRange', value)}
+            >
+              {tripFilter.lengthRange.map((item) => (
+                <Option key={item} value={item}>
+                  {item} km
+                </Option>
+              ))}
+            </Select>
+          </div>
+          <AccordionGroup className="form_item" variant="soft">
+            <Accordion>
+              <AccordionSummary className="input_title">Terén</AccordionSummary>
+              <AccordionDetails className="input_box">
+                {tripFilter.terrainType.map((item) => (
+                  <Checkbox
+                    key={item}
+                    className="input_details"
+                    variant="soft"
+                    label={<img src={`/icons/${item}.png`}></img>}
+                    checked={formValues.terrain?.includes(item)}
+                    onChange={() => handleCheckboxChange('terrain', item)}
+                    disableIcon
+                  ></Checkbox>
+                ))}
+              </AccordionDetails>
+            </Accordion>
+          </AccordionGroup>
+          <AccordionGroup className="form_item" variant="soft">
+            <Accordion>
+              <AccordionSummary className="input_title">
+                Více možností
+              </AccordionSummary>
+              <AccordionDetails className="input_box">
+                {tripFilter.features.map((item) => (
+                  <Checkbox
+                    key={item}
+                    className="input_details"
+                    variant="soft"
+                    label={<img src={`/icons/${item}.png`}></img>}
+                    checked={formValues.features?.includes(item)}
+                    onChange={() => handleCheckboxChange('features', item)}
+                    disableIcon
+                  ></Checkbox>
+                ))}
+              </AccordionDetails>
+            </Accordion>
+          </AccordionGroup>
+          <AccordionGroup className="form_item" variant="soft">
+            <Accordion>
+              <AccordionSummary className="input_title">
+                Vhodné pro
+              </AccordionSummary>
+              <AccordionDetails className="input_box">
+                {tripFilter.suitableFor.map((item) => (
+                  <Checkbox
+                    key={item}
+                    className="input_details"
+                    variant="soft"
+                    label={<img src={`/icons/${item}.png`}></img>}
+                    checked={formValues.suitableFor?.includes(item)}
+                    onChange={() => handleCheckboxChange('suitableFor', item)}
+                    disableIcon
+                  ></Checkbox>
+                ))}
+              </AccordionDetails>
+            </Accordion>
+          </AccordionGroup>
 
-      <AccordionGroup variant="soft">
-        <Accordion>
-          <AccordionSummary className="input_title">Terén</AccordionSummary>
-          <AccordionDetails className="input_box">
-            {tripFilter.terrainType.map((item) => (
-              <Checkbox
-                key={item}
-                className="input_details"
-                variant="soft"
-                label={<img src={`/icons/${item}.png`}></img>}
-                checked={formValues.terrain?.includes(item)}
-                onChange={() => handleCheckboxChange('terrain', item)}
-                disableIcon
-              ></Checkbox>
-            ))}
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary className="input_title">
-            Více možností
-          </AccordionSummary>
-          <AccordionDetails className="input_box">
-            {tripFilter.features.map((item) => (
-              <Checkbox
-                key={item}
-                className="input_details"
-                variant="soft"
-                label={<img src={`/icons/${item}.png`}></img>}
-                checked={formValues.features?.includes(item)}
-                onChange={() => handleCheckboxChange('features', item)}
-                disableIcon
-              ></Checkbox>
-            ))}
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary className="input_title">
-            Vhodné pro
-          </AccordionSummary>
-          <AccordionDetails className="input_box">
-            {tripFilter.suitableFor.map((item) => (
-              <Checkbox
-                key={item}
-                className="input_details"
-                variant="soft"
-                label={<img src={`/icons/${item}.png`}></img>}
-                checked={formValues.suitableFor?.includes(item)}
-                onChange={() => handleCheckboxChange('suitableFor', item)}
-                disableIcon
-              ></Checkbox>
-            ))}
-          </AccordionDetails>
-        </Accordion>
-      </AccordionGroup>
-      <NavLink className="form_btn" to={`/result?${searchParams.toString()}`}>
-        Vybrat
-      </NavLink>
-    </form>
+          <NavLink
+            className="form_btn"
+            to={`/result?${searchParams.toString()}`}
+          >
+            Vybrat
+          </NavLink>
+        </form>
+      </div>
+    </div>
   );
 };
 

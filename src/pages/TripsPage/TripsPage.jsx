@@ -20,7 +20,7 @@ const TripsPage = () => {
     <div className="tripspage-photo">
       <div className="container">
         <Header />
-        <div className="form_item">
+        <div className="form_item-trip">
           <label className="input_title" htmlFor="location">
             Lokalita
           </label>
