@@ -45,16 +45,12 @@ const ResultsPage = () => {
         <Header />
         <div className="trips-list">
           {filterTrips.map((trip) => (
-            <NavLink to={`/detail`}>
-              <div key={trip.id}>
-                <div>
-                  <img src={trip.imageUrl} alt="" />
-                </div>
-                <h2>{trip.name}</h2>
-
-                <p href="#">Chci sem</p>
-              </div>
-            </NavLink>
+            <ResultsCard
+              key={trip.id}
+              name={trip.name}
+              img={trip.imageUrl}
+              id={trip.id}
+            />
           ))}
         </div>
       </div>
