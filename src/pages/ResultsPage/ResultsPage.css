@@ -1,0 +1,12 @@
+.container {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.trips-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 36rem;
+}
