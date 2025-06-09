@@ -12,13 +12,15 @@ a {
 }
 
 .form_item {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
   width: 90%;
+
 }
 
 .form_item.MuiAccordionGroup-root,
 .form_item-length {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.4rem;
+  border-radius: 0.5rem;
 }
 
 .form_accordion {
@@ -28,6 +30,7 @@ a {
 .input_title {
   line-height: 2;
   color: #1B3039;
+  font-weight: 600;
 }
 
 .input_box .MuiAccordionDetails-content {

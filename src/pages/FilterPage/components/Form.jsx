@@ -61,6 +61,7 @@ const Form = () => {
             </label>
             <Select
               variant="soft"
+              size="lg"
               name="location"
               value={formValues.location}
               onChange={(e, value) => handleChange('location', value)}
@@ -78,6 +79,7 @@ const Form = () => {
             </label>
             <Select
               variant="soft"
+              size="lg"
               name="difficulty"
               value={formValues.difficulty}
               onChange={(e, value) => handleChange('difficulty', value)}
@@ -95,6 +97,7 @@ const Form = () => {
             </label>
             <Select
               variant="soft"
+              size="lg"
               name="lengthRange"
               value={formValues.lengthRange}
               onChange={(e, value) => handleChange('lengthRange', value)}
@@ -106,7 +109,7 @@ const Form = () => {
               ))}
             </Select>
           </div>
-          <AccordionGroup className="form_item" variant="soft">
+          <AccordionGroup className="form_item" variant="soft" size="lg">
             <Accordion>
               <AccordionSummary className="input_title">Terén</AccordionSummary>
               <AccordionDetails className="input_box">
@@ -124,7 +127,7 @@ const Form = () => {
               </AccordionDetails>
             </Accordion>
           </AccordionGroup>
-          <AccordionGroup className="form_item" variant="soft">
+          <AccordionGroup className="form_item" variant="soft" size="lg">
             <Accordion>
               <AccordionSummary className="input_title">
                 Více možností
@@ -144,7 +147,7 @@ const Form = () => {
               </AccordionDetails>
             </Accordion>
           </AccordionGroup>
-          <AccordionGroup className="form_item" variant="soft">
+          <AccordionGroup className="form_item" variant="soft" size="lg">
             <Accordion>
               <AccordionSummary className="input_title">
                 Vhodné pro
