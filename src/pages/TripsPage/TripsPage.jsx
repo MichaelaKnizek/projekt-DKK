@@ -21,6 +21,7 @@ const TripsPage = () => {
             Lokalita
           </label>
           <Select
+            className="select_location"
             variant="soft"
             value={location}
             onChange={(e, value) => handleChange(value)}
