@@ -232,4 +232,28 @@ export const trips = [
     imageUrl: '/images/lehka1.png',
     mapUrl: '/images/hrabetice.png',
   },
+  {
+    id: 'trasa-012',
+    name: 'Přechod Jizerek: Hejnice – Smrk – Jizera – Souš',
+    location: 'Jizerky',
+    description:
+      'Celodenní přechod přes nejvyšší vrchol Jizerských hor – Smrk, následovaný přechodem hřebenů přes horu Jizera. Trasa je náročná délkou i převýšením, ale nabízí dechberoucí výhledy, odlehlé lesy a pravou horskou atmosféru.',
+    lengthKm: 23,
+    lengthRange: '20+',
+    elevationGainM: 1100,
+    durationH: 8,
+    difficulty: 'těžká',
+    terrain: ['kamenitá cesta', 'lesní cesta', 'hřebenovka', 'vyhlídky'],
+    suitableFor: ['zkušení turisté', 'psi'],
+    features: [
+      'výhledy',
+      'vrcholy',
+      'klid',
+      'horské boudy',
+      'přírodní rezervace',
+    ],
+    accessibility: ['vlak (Hejnice)', 'auto (Souš)'],
+    imageUrl: '/images/tezka1.png',
+    mapUrl: '/images/tezka1_screenshot.png',
+  },
 ];
