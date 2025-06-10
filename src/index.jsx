@@ -5,6 +5,7 @@ import FilterPage from './pages/FilterPage/FilterPage';
 import TripsPage from './pages/TripsPage/TripsPage';
 import ResultsPage from './pages/ResultsPage/ResultsPage';
 import DetailPage from './pages/DetailPage/DetailPage';
+import MapPage from './pages/MapPage/MapPage';
 import './global.css';
 
 createRoot(document.querySelector('#app')).render(
@@ -15,6 +16,7 @@ createRoot(document.querySelector('#app')).render(
       <Route path="/trips" element={<TripsPage />} />
       <Route path="/result" element={<ResultsPage />} />
       <Route path="/detail" element={<DetailPage />} />
+      <Route path="/map" element={<MapPage />} />
     </Routes>
   </BrowserRouter>,
 );
