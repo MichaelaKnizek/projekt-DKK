@@ -13,6 +13,7 @@ const DetailPage = () => {
   return (
     <div className="detail">
       <div className="detail-photo"></div>
+
       <p className="detail-heading">{trip.name}</p>
       <div className="detail-info">
         <InfoTile title="Délka" number={trip.lengthKm} measure="km" />
@@ -26,7 +27,6 @@ const DetailPage = () => {
       <NavLink to={`/map?id=${trip.id}`} className="detail-map">
         SEM CHCI
       </NavLink>
-      <button className="detail-map">SEM CHCI</button>
     </div>
   );
 };
