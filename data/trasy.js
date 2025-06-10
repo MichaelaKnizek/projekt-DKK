@@ -95,6 +95,9 @@ export const trips = [
   },
   {
     id: 'trasa-004',
+
+  
+    
     name: 'Bedřichov – Nová louka – Kristiánov – Bedřichov',
     location: 'Jizerky',
     description: [
@@ -121,6 +124,7 @@ export const trips = [
   },
   {
     id: 'trasa-005',
+
     name: 'Pustevny – Radhošť – socha Radegasta – Pustevny',
     location: 'Beskydy',
     description:
@@ -138,7 +142,9 @@ export const trips = [
     mapUrl: '/images/beskydy1_screenshot.jpg',
   },
   {
+
     id: 'trasa-006',
+
     name: 'Špindlerův Mlýn – Sněžka – Pec pod Sněžkou',
     location: 'Krkonoše',
     description:
@@ -154,5 +160,69 @@ export const trips = [
     accessibility: ['bus', 'auto'],
     imageUrl: '/images/snezka.webp',
     mapUrl: '/images/krkonose1_screenshot.jpg',
+  },
+  {
+    id: 'trasa-006',
+    name: 'Bedřichov – Nová louka – Kristiánov – Bedřichov',
+    location: 'Jizerky',
+    description: [
+      'Příjemný okruh z Bedřichova přes Novou louku a Kristiánov. Lesní cesty a upravené trasy vhodné pro kočárky i děti. Cestou potkáte zajímavé historické objekty a krásná přírodní zákoutí Jizerek.',
+    ],
+    lengthKm: 12,
+    lengthRange: '10-15',
+    elevationGainM: 110,
+    durationH: 3,
+    difficulty: 'lehká',
+    terrain: ['lesní cesta'],
+    suitableFor: ['kočárky', 'děti', 'psi'],
+    features: [
+      'naučné stezky',
+      'přístřešky',
+      'piknik',
+      'klid',
+      'výhledy',
+      'občerstvení',
+    ],
+    accessibility: ['autobus', 'auto'],
+    imageUrl: '/images/lehka1.png',
+    mapUrl: '/images/bedrichov.jpg',
+  },
+  {
+    id: 'trasa-007',
+    name: 'Hejnice – Ferdinandov – vodní nádrž Bedřichov',
+    location: 'Jizerky',
+    description: [
+      'Krásná trasa vedoucí klidným údolím směrem k vodní nádrži, ideální na nenáročný výlet. Místy stín, šumění potoka a mnoho možností zastavit se na svačinu. Vhodné i pro starší děti a psy.',
+    ],
+    lengthKm: 10,
+    lengthRange: '10-15',
+    elevationGainM: 130,
+    durationH: 3,
+    difficulty: 'lehká',
+    terrain: ['lesní cesta', 'zpevněná cesta'],
+    suitableFor: ['děti', 'psi'],
+    features: ['klid', 'vodopády', 'naučné stezky', 'přístřešky'],
+    accessibility: ['vlak', 'auto'],
+    imageUrl: '/images/lehka5.png',
+    mapUrl: '/images/hejnice.png',
+  },
+  {
+    id: 'trasa-008',
+    name: 'Smědava – Předěl – Knajpa – Smědava',
+    location: 'Jizerky',
+    description: [
+      'Lesní okruh s krásnými výhledy a možností občerstvení na Knajpě. Celá trasa vede po zpevněných cestách, vhodná pro výlety s dětmi, psem nebo pro lehčí sportovní aktivitu.',
+    ],
+    lengthKm: 12,
+    lengthRange: '10-15',
+    elevationGainM: 180,
+    durationH: 3,
+    difficulty: 'lehká',
+    terrain: ['šotolina', 'lesní cesta'],
+    suitableFor: ['děti', 'psi'],
+    features: ['výhledy', 'občerstvení', 'přístřešky', 'klid'],
+    accessibility: ['auto', 'autobus'],
+    imageUrl: '/images/lehka2.png',
+    mapUrl: '/images/jizerky4.png',
   },
 ];
