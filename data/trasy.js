@@ -95,9 +95,6 @@ export const trips = [
   },
   {
     id: 'trasa-004',
-
-  
-    
     name: 'Bedřichov – Nová louka – Kristiánov – Bedřichov',
     location: 'Jizerky',
     description: [
@@ -142,7 +139,6 @@ export const trips = [
     mapUrl: '/images/beskydy1_screenshot.jpg',
   },
   {
-
     id: 'trasa-006',
 
     name: 'Špindlerův Mlýn – Sněžka – Pec pod Sněžkou',
@@ -161,34 +157,9 @@ export const trips = [
     imageUrl: '/images/snezka.webp',
     mapUrl: '/images/krkonose1_screenshot.jpg',
   },
+
   {
-    id: 'trasa-006',
-    name: 'Bedřichov – Nová louka – Kristiánov – Bedřichov',
-    location: 'Jizerky',
-    description: [
-      'Příjemný okruh z Bedřichova přes Novou louku a Kristiánov. Lesní cesty a upravené trasy vhodné pro kočárky i děti. Cestou potkáte zajímavé historické objekty a krásná přírodní zákoutí Jizerek.',
-    ],
-    lengthKm: 12,
-    lengthRange: '10-15',
-    elevationGainM: 110,
-    durationH: 3,
-    difficulty: 'lehká',
-    terrain: ['lesní cesta'],
-    suitableFor: ['kočárky', 'děti', 'psi'],
-    features: [
-      'naučné stezky',
-      'přístřešky',
-      'piknik',
-      'klid',
-      'výhledy',
-      'občerstvení',
-    ],
-    accessibility: ['autobus', 'auto'],
-    imageUrl: '/images/lehka1.png',
-    mapUrl: '/images/bedrichov.jpg',
-  },
-  {
-    id: 'trasa-007',
+    id: 'trasa-008',
     name: 'Hejnice – Ferdinandov – vodní nádrž Bedřichov',
     location: 'Jizerky',
     description: [
@@ -207,7 +178,7 @@ export const trips = [
     mapUrl: '/images/hejnice.png',
   },
   {
-    id: 'trasa-008',
+    id: 'trasa-009',
     name: 'Smědava – Předěl – Knajpa – Smědava',
     location: 'Jizerky',
     description: [
@@ -224,5 +195,41 @@ export const trips = [
     accessibility: ['auto', 'autobus'],
     imageUrl: '/images/lehka2.png',
     mapUrl: '/images/jizerky4.png',
+  },
+  {
+    id: 'trasa-010',
+    name: 'Josefův Důl – Peklo – Mariánskohorské boudy – Josefův Důl',
+    location: 'Jizerky',
+    description:
+      'Středně náročný okruh z Josefova Dolu údolím Jedlové, kolem vodopádů do oblasti Pekla a zpět přes Mariánskohorské boudy. Trasa vede divokou přírodou, lesy a klidnými úseky mimo hlavní cesty.',
+    lengthKm: 13,
+    lengthRange: '10-15',
+    elevationGainM: 420,
+    durationH: 4.5,
+    difficulty: 'střední',
+    terrain: ['lesní cesta', 'kamenitá stezka'],
+    suitableFor: ['turisté', 'psi'],
+    features: ['vodopády', 'klid', 'výhledy', 'horské boudy'],
+    accessibility: ['vlak', 'auto'],
+    imageUrl: '/images/stredni3.png',
+    mapUrl: '/images/stredni_screenshot.png',
+  },
+  {
+    id: 'trasa-011',
+    name: 'Hrabětice – Královka – Severák – Hrabětice',
+    location: 'Jizerky',
+    description:
+      'Nenáročná trasa vhodná pro rodiny s dětmi, začíná v Hraběticích a vede k rozhledně Královka s krásnými výhledy. Pokračuje kolem Severáku zpět. Vhodná i pro kočárky a malé cyklisty, dostupné občerstvení a odpočinková místa.',
+    lengthKm: 10,
+    lengthRange: '10-15',
+    elevationGainM: 120,
+    durationH: 2,
+    difficulty: 'lehká',
+    terrain: ['asfalt', 'lesní cesta'],
+    suitableFor: ['děti', 'kočárky', 'psi'],
+    features: ['vodopády', 'občerstvení', 'výhledy', 'piknik'],
+    accessibility: ['auto', 'autobus'],
+    imageUrl: '/images/lehka1.png',
+    mapUrl: '/images/hrabetice.png',
   },
 ];
