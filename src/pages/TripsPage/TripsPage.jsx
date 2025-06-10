@@ -18,7 +18,7 @@ const TripsPage = () => {
   };
   return (
     <div className="tripspage-photo">
-      <div className="container">
+      <div className="trips-container">
         <Header />
         <div className="form_item-trip">
           <label className="input_title" htmlFor="location">
