@@ -40,10 +40,10 @@ const ResultsPage = () => {
   const filterTrips = executeFilter(trips, filterValues);
   console.log(filterTrips);
   return (
-    <div className="tripspage-photo">
-      <div className="container">
+    <div className="resultspage-photo">
+      <div className="results-container">
         <Header />
-        <div className="trips-list">
+        <div className="results-list">
           {filterTrips.map((trip) => (
             <ResultsCard
               key={trip.id}
