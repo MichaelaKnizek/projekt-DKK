@@ -52,7 +52,7 @@ const Form = () => {
   //console.log(formValues);
   return (
     <div className="tripspage-photo">
-      <div className="container">
+      <div className="form-container">
         <Header />
         <form className="form">
           <div className="form_item">

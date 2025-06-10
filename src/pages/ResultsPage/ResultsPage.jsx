@@ -50,6 +50,10 @@ const ResultsPage = () => {
               name={trip.name}
               img={trip.imageUrl}
               id={trip.id}
+              length={trip.lengthKm}
+              duration={trip.durationH}
+              elevation={trip.elevationGainM}
+              difficulty={trip.difficulty}
             />
           ))}
         </div>

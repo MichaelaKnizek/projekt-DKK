@@ -2,6 +2,11 @@ a {
   text-decoration: none;
 }
 
+.form-container {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
 .form {
   display: flex;
   flex-direction: column;
