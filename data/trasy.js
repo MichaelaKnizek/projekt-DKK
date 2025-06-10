@@ -126,7 +126,7 @@ export const trips = [
     suitableFor: ['psi'],
     features: ['výhledy', 'občerstvení'],
     accessibility: ['bus', 'auto'],
-    imageUrl: '/images/snezka.jpg',
+    imageUrl: '/images/snezka.webp',
     mapUrl: '/images/krkonose1_screenshot.jpg',
   },
 ];
