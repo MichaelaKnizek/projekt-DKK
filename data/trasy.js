@@ -24,7 +24,7 @@ export const trips = [
       'klid',
     ],
     accessibility: ['vlak', 'autobus', 'auto'],
-    imageUrl: '/images/lehka4.png',
+    imageUrl: '/images/lehka3.png',
     mapUrl: '/images/lehka_screenshot.png',
   },
   {
@@ -62,7 +62,7 @@ export const trips = [
   },
   {
     id: 'trasa-003',
-    name: 'Smědava - Jizera - vodopád Velký Štolpich - Hřebínek - Holubník - Černá hora - Smědava',
+    name: 'Smědava - Jizera - vodopád Velký Štolpich - Hřebínek - Černá hora - Smědava',
     location: 'Jizerky',
     description:
       'Velký horský okruh pro zkušené turisty. Začíná ve Smědavě a vede přes Jizeru a další vyhlídková místa. Cestou uvidíte vodopád Velký Štolpich a projdete přes hřeben Holubníku a Černé hory. Trasa je dlouhá a s velkým převýšením, ale odmění vás krásnou přírodou a výhledy.',
@@ -90,7 +90,7 @@ export const trips = [
       'klid',
     ],
     accessibility: ['vlak', 'autobus', 'auto'],
-    imageUrl: '/images/tezka5.png',
+    imageUrl: '/images/tezka2.png',
     mapUrl: '/images/tezka_screenshot.png',
   },
   {

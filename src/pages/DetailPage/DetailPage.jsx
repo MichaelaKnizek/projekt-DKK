@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router';
+import { NavLink, useSearchParams } from 'react-router';
 import InfoTile from './components/InfoTile';
 import { trips } from '../../../data/trasy';
 import './DetailPage.css';
@@ -23,6 +23,9 @@ const DetailPage = () => {
         <p className="detail-subheading"></p>
         <p className="detail-text">{trip.description}</p>
       </div>
+      <NavLink to={`/map?id=${trip.id}`} className="detail-map">
+        SEM CHCI
+      </NavLink>
       <button className="detail-map">SEM CHCI</button>
     </div>
   );

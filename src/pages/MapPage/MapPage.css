@@ -1,0 +1,11 @@
+.map-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.map-page__image {
+  margin-top: 2rem;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
