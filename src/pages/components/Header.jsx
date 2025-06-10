@@ -3,14 +3,15 @@ import './Header.css';
 
 import React from 'react';
 
-const Header = () => {
+const Header = ({ showRefresh = true }) => {
   return (
     <header className="header">
       <p className="header__title">Vyber si svůj výlet</p>
       <nav className="navicons">
-        <NavLink to="/filter" className="header__refresh"></NavLink>
-        {/* <div className="header__home"></div> */}
-        <a href="/" className="header__home"></a>
+        {showRefresh && (
+          <NavLink to="/filter" className="header__refresh"></NavLink>
+        )}
+        <a href="/" className="header__home" />
       </nav>
     </header>
   );

@@ -2,6 +2,16 @@ a {
   text-decoration: none;
 }
 
+.form-photo {
+  background-image: url(/images/landing_page_blur_7.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  height: 100vh;
+  overflow: auto;
+}
+
 .form-container {
   max-width: 36rem;
   margin: 0 auto;
@@ -83,11 +93,13 @@ a {
   text-transform: uppercase;
   padding: 0.5em 1.5em 0.5em 1.2em;
   color: white;
-  border: none;
+  border: 1px solid #DAE9F6;
   letter-spacing: 0.05em;
-  border-radius: 20em;
+  border-radius: 4px;
   background-color: #1b3039;
   transition: 0.5s;
+
+  margin-bottom: 2.5vh;
 }
 
 .form_btn:hover {

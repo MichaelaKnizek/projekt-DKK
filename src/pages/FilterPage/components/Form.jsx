@@ -51,7 +51,7 @@ const Form = () => {
   };
   //console.log(formValues);
   return (
-    <div className="tripspage-photo">
+    <div className="form-photo">
       <div className="form-container">
         <Header />
         <form className="form">

@@ -95,6 +95,36 @@ export const trips = [
   },
   {
     id: 'trasa-004',
+
+  
+    
+    name: 'Bedřichov – Nová louka – Kristiánov – Bedřichov',
+    location: 'Jizerky',
+    description: [
+      'Příjemný okruh z Bedřichova přes Novou louku a Kristiánov. Lesní cesty a upravené trasy vhodné pro kočárky i děti. Cestou potkáte zajímavé historické objekty a krásná přírodní zákoutí Jizerek.',
+    ],
+    lengthKm: 9,
+    lengthRange: '5-10',
+    elevationGainM: 110,
+    durationH: 2.5,
+    difficulty: 'lehká',
+    terrain: ['lesní cesta', 'šotolina'],
+    suitableFor: ['kočárky', 'děti', 'psi'],
+    features: [
+      'naučné stezky',
+      'přístřešky',
+      'piknik',
+      'klid',
+      'výhledy',
+      'občerstvení',
+    ],
+    accessibility: ['autobus', 'auto'],
+    imageUrl: '/images/jizerky_002.png',
+    mapUrl: '/images/jizerky_002_map.png',
+  },
+  {
+    id: 'trasa-005',
+
     name: 'Pustevny – Radhošť – socha Radegasta – Pustevny',
     location: 'Beskydy',
     description:
@@ -112,7 +142,9 @@ export const trips = [
     mapUrl: '/images/beskydy1_screenshot.jpg',
   },
   {
-    id: 'trasa-005',
+
+    id: 'trasa-006',
+
     name: 'Špindlerův Mlýn – Sněžka – Pec pod Sněžkou',
     location: 'Krkonoše',
     description:
@@ -126,7 +158,7 @@ export const trips = [
     suitableFor: ['psi'],
     features: ['výhledy', 'občerstvení'],
     accessibility: ['bus', 'auto'],
-    imageUrl: '/images/snezka.jpg',
+    imageUrl: '/images/snezka.webp',
     mapUrl: '/images/krkonose1_screenshot.jpg',
   },
   {
