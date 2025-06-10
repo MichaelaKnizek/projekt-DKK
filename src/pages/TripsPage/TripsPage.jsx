@@ -19,7 +19,7 @@ const TripsPage = () => {
   return (
     <div className="tripspage-photo">
       <div className="trips-container">
-        <Header />
+        <Header showRefresh={false} />
         <div className="form_item-trip">
           <label className="input_title" htmlFor="location">
             Lokalita

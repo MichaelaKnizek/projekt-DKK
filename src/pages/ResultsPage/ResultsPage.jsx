@@ -42,7 +42,7 @@ const ResultsPage = () => {
   return (
     <div className="resultspage-photo">
       <div className="results-container">
-        <Header />
+        <Header showRefresh={false} />
         <div className="results-list">
           {filterTrips.map((trip) => (
             <ResultsCard
